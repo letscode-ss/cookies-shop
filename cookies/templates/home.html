@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+<div>
+    {% for cookie in cookies %}
+        <section>
+            <h2>{{ cookie.name|capfirst }}</h2>
+            <img class="product" src="{% static cookie.imagepath %}" alt="Cookies photo">
+            <h3>Details</h3>
+            <ul>
+                <li>size: {{ cookie.size|capfirst }}</li>
+                <li>Calories: {{ cookie.calories|capfirst }} CL</li>
+                <li>Type: {{ cookie.type|capfirst }}</li>
+                <li>Description: {{ cookie.description|capfirst }}</li>
+            </ul>
+        </section>
+    {% endfor %}
+</div>
+{% endblock %}
