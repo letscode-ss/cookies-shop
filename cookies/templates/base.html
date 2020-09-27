@@ -4,13 +4,39 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
     <title>Cookies Shop</title>
 
     <link href="{% static 'css/index.css' %}" rel="stylesheet" type="text/css" />
   </head>
 	<body>
+<div id="container">
+  <nav id="topNav" class="navbar navbar-expand-md navbar-light">
+      <a class="navbar-brand" href="{% url 'home' %}">
+        <img src="{% static "Logo.png" %}" width="30" height="30" class="d-inline-block align-top" alt="Nick's Logo">
+        <span>Shop</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse text-center" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="accounts/login/" target="_blank">Signup</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="accounts/login/" target="_blank">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="accounts/logout/" target="_blank">Logout</a>
+          </li>
+        </ul>
+      </div>
+  </nav>
 
 		<header>
 			<h1>Aradhana's Kitchen Cookies shop</h1>
@@ -22,13 +48,13 @@
             </p>
 		</header>
 
-        {% block content %}
+       {% block content %}
         {% endblock %}
-
 		<footer>
 			<p>Copyright by 2020</p>
 		</footer>
 
-		<script src="static/script.js"></script>
+		<!-- <script src="static/script.js"></script> -->
+</div>
 	</body>
 </html>

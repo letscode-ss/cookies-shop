@@ -2,6 +2,11 @@
 {% block content %}
 {% load static %}
 <div>
+    {% if user.is_authenticated %}
+    <p> Welcome, {{ user.username }}</p>
+    {% else %}
+    <p> Welcome, Friend please login </p>
+    {% endif %}
     {% for cookie in cookies %}
         <section>
             <h2>{{ cookie.name|capfirst }}</h2>
@@ -17,3 +22,4 @@
     {% endfor %}
 </div>
 {% endblock %}
+
